@@ -1,0 +1,9 @@
+var childSchema = new Schema({ name: 'string' });
+
+var parentSchema = new Schema({
+  // Array of subdocuments
+  children: [childSchema],
+  // Single nested subdocuments. Caveat: single nested subdocs only work
+  // in mongoose >= 4.2.0
+  child: childSchema
+});
